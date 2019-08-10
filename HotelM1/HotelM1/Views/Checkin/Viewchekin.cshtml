@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Viewchekin";
+}
+
+<h2>Viewchekin</h2>
+
+
+
+<p> 
+   @using (Html.BeginForm("Search", "Checkin", FormMethod.Post))
+  {
+    <input type="text" name="search" /> 
+   <input type="submit" value="Search" />
+   }
+ 
+    <table border="1">
+        <tr>
+            <td>CheckIn Id</td>
+            <td>Guestname</td>
+            <td>Contact Number</td>
+             <td>Adress</td>
+            <td>Room type</td>
+         
+            <td>Total Price</td>
+            <td>Quantity of Room</td>
+            <td>No. of days(stay)</td>
+        </tr>
+        @foreach (var item in TempData["Guestdetails"] as IList<HotelM1.Models.Checkinmodel>)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CheckinId)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuestName)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.contact)</td>
+                <td>@Html.DisplayFor(modelItem => item.address)</td>
+                <td>@Html.DisplayFor(modelItem => item.RoomType)</td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantity)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Total_days)</td>
+                <td> @Html.ActionLink("checkout","checkout","Checkin")</td>
+            </tr>
+        }
+    </table>
+   
+   
+</p>
+<div>
+  
+</div>

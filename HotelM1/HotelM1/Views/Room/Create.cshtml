@@ -1,0 +1,25 @@
+﻿@model HotelM1.Models.RoomModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Rooms</h2>
+
+@using (Html.BeginForm("Create", "Room", FormMethod.Post))
+{
+    <p>Add a room</p>
+
+   @Html.TextBoxFor(r => r.RoomType);
+    <p>Room Quantity</p>
+       @Html.TextAreaFor(r => r.numberofRooms);
+  
+    <input type="submit" value="Savedata" />
+   
+
+
+}
+
+
+<div>
+    
+       @Html.ActionLink("See roomdetails", "Viewdetails")</div>
