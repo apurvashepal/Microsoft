@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                <a href="http://localhost:51709/Room/Create"><input type="button" value="Add Room" /></a>
+                <a href="http://localhost:51709/CheckIn/CheckIn"><input type="button" value="CheckIn" /></a>
+            </p>
+        </div>
+    </section>
+}
+<h4> Click For Check In Details</h4>
+<h3><a href="http://localhost:51709/CheckIn/Viewchekin"><input type="button" value="Details" /></a></h3>

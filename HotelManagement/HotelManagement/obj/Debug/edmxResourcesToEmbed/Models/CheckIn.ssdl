@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Checkin">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="contact" Type="int" Nullable="false" />
+    <Property Name="address" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="dt" Type="date" Nullable="false" />
+    <Property Name="Total_days" Type="int" Nullable="false" />
+    <Property Name="bill" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EmployeeModel1StoreContainer">
+    <EntitySet Name="Checkin" EntityType="Self.Checkin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
