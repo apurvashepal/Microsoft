@@ -1,0 +1,28 @@
+﻿@model EntityFrameWork.Models.CheckIn
+@{
+    ViewBag.Title = "checkin";
+}
+
+<h2>checkin</h2>
+@using (Html.BeginForm("checkin", "Checkin", FormMethod.Post))
+{ <p>
+    BookingId</p>
+  
+  <p>Guestname</p>  
+@Html.TextBoxFor(model => model.GuestName)<br />
+    <p> Contact number</p>
+@Html.TextBoxFor(model => model.contact) <br />
+    <p>Address</p>
+@Html.TextBoxFor(model => model.address)<br />
+    <p>Number of rooms Required</p>
+@Html.TextBoxFor(model => model.quantity)<br />
+    <p>No.of Days for Stay</p>
+@Html.TextBoxFor(model => model.Total_days)
+    <p>Room Type</p>
+@Html.TextBoxFor(model => model.RoomType)
+
+<input type="submit" value="Savedata" />
+
+    
+    <a href="http://localhost:52993/Checkin/Viewchekin">Check In Records</a>
+       }

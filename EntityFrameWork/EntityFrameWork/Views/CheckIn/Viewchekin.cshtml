@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EntityFrameWork.Models.CheckIn>
+@using EntityFrameWork.Models
+@{
+    ViewBag.Title = "Viewchekin";
+}
+<h2>Viewchekin</h2>
+
+<p>
+    @using (Html.BeginForm("Search", "Checkin", FormMethod.Post))
+    {
+        <input type="text" name="search" />
+        <input type="submit" value="Search" />
+    }
+
+    <table border="1">
+        <tr>
+            <td>CheckIn Id</td>
+            <td>Guestname</td>
+            <td>Contact Number</td>
+            <td>Adress</td>
+            <td>Room type</td>
+
+            <td>Total Price</td>
+            <td>Quantity of Room</td>
+            <td>No. of days(stay)</td>
+            <td>Status</td>
+            <td>Date</td>
+        </tr>
+        @foreach (CheckIn checkIn in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => checkIn.Id)</td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.GuestName)
+            </td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Contact)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Address)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Roomtype)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Quantity)</td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.StayDays)
+            </td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Status)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Date_)</td>
+            <td> @Html.ActionLink("checkout", "checkout", "Checkin")</td>
+        </tr>
+        }
+    </table>
+
+
+</p>
+<div>
+
+</div>
