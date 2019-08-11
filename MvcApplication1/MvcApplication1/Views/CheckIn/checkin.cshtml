@@ -1,0 +1,30 @@
+﻿@model MvcApplication1.Models.CheckIn
+@{
+    ViewBag.Title = "checkin";
+}
+
+<h2>checkin</h2>
+<h2>checkin</h2>
+@using (Html.BeginForm("checkin", "Checkin", FormMethod.Post))
+{ <p>
+        BookingId
+    </p>
+
+    <p>Guestname</p>
+    @Html.TextBoxFor(model => model.GusestName)<br />
+    <p> Contact number</p>
+    @Html.TextBoxFor(model => model.Contact) <br />
+    <p>Address</p>
+    @Html.TextBoxFor(model => model.Address)<br />
+    <p>Number of rooms Required</p>
+    @Html.TextBoxFor(model => model.Quantity)<br />
+    <p>No.of Days for Stay</p>
+    @Html.TextBoxFor(model => model.Staydays)
+    <p>Room Type</p>
+    @Html.TextBoxFor(model => model.Roomtype)
+
+    <input type="submit" value="Savedata" />
+
+
+    <a href="http://localhost:58181/Checkin/Viewchekin">Check In Records</a>
+}

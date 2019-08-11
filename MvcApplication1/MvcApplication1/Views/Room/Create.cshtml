@@ -1,0 +1,23 @@
+﻿@model MvcApplication1.Models.Room
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+@using (Html.BeginForm("Create", "Room", FormMethod.Post))
+{
+    <p>Add a room</p>
+
+    @Html.TextBoxFor(r => r.Roomtype);
+    <p>Room Quantity</p>
+    @Html.TextBox("NumberofRooms");
+
+    <input type="submit" value="Savedata" />
+
+
+}
+
+<div>
+
+    @Html.ActionLink("See roomdetails", "Viewdetails")
+</div>

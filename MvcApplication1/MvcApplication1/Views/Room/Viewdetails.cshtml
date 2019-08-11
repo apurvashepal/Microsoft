@@ -1,0 +1,45 @@
+﻿@model IEnumerable <MvcApplication1.Models.Room>
+@using MvcApplication1.Models
+@{
+    ViewBag.Title = "Viewdetails";
+}
+
+<h2>Viewdetails</h2>
+
+<h2>Result</h2>
+<p>
+
+    <table>
+        <tr>
+            <td>Room ID</td>
+            <td>Room type</td>
+            <td> Room price</td>
+            <td></td>
+        </tr>
+        @foreach (Room room in @models)
+        {
+
+
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => room.Id)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => room.Roomtype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => room.Price);
+                </td>
+                <td>
+                    <a href="http://localhost:52993/Room/Edit?id=@room">Edit</a>
+                </td>
+                <td>
+                    <a href="http://localhost:52993/Room/delete?id=@room.Id"> Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</p>
+<div>
+    @Html.ActionLink("Back to form", "Create")
+    <a href="http://localhost:58181/Checkin/checkin"> Click to checkin</a>
+</div>

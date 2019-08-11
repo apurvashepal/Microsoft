@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MvcApplication1.Models.CheckIn>
+@using MvcApplication1.Models
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+<table border="1">
+    <tr>
+        <td>CheckIn Id</td>
+        <td>Guestname</td>
+        <td>Contact Number</td>
+        <td>Adress</td>
+        <td>Room type</td>
+
+        <td>Total Price</td>
+        <td>Quantity of Room</td>
+        <td>No. of days(stay)</td>
+        <td>Status</td>
+        <td>Date</td>
+    </tr>
+    @foreach(MvcApplication1.Models.CheckIn checkIn in @Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => checkIn.Id)</td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.GusestName)
+            </td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Contact)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Address)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Roomtype)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Quantity)</td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => checkIn.Staydays)
+            </td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Status)</td>
+            <td>@Html.DisplayFor(modelItem => checkIn.Date)</td>
+
+        </tr>
+    }
+</table>

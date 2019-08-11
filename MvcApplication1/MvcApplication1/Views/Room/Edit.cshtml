@@ -1,0 +1,17 @@
+﻿@model MvcApplication1.Models.Room
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    <p>Update details</p>
+
+    @Html.TextBoxFor(r => r.Roomtype);
+    <p>Room Quantity</p>
+
+    <input type="submit" value="Save changes" />
+
+}
+@Html.ActionLink("See roomdetails", "Viewdetails")
