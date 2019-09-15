@@ -1,0 +1,2 @@
+ng g c component_name
+ng g m module_name

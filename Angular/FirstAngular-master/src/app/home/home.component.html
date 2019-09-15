@@ -1,0 +1,35 @@
+<div class="container">
+  <form [formGroup]="myForm">
+    <div class="form-group">
+      <label for="firstName" class="form-control">First name : </label>
+      <input type="text" class="form-control" formControlName="firstName" name="firstName" id="firstName"
+        placeholder="First Name">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName" class="form-control">Last name : </label>
+      <input type="text" class="form-control" name="lastName" formControlName="lastName" id="lastName"
+        placeholder="Last Name">
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-control">Email : </label>
+      <input type="email" class="form-control" name="email" id="email" formControlName="email" placeholder="E-mail"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </div>
+
+
+    <div class="form-group">
+      <label for="mobile" class="form-control">Mobile Number : </label>
+      <input type="text" class="form-control" name="mobile" id="mobile" formControlName="mobile" placeholder="Mobile No"
+        maxlength="10">
+    </div>
+
+    <div class="form-group">
+
+      <input type="submit" class="form-control" (click)="handleSubmit()">
+    </div>
+
+
+  </form>
+</div>
